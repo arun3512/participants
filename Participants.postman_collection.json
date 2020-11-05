@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "74c9438c-0d7f-4512-b275-0b7fe81cc9dc",
+		"name": "Participants",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add participant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "ashish",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "10",
+							"type": "text"
+						},
+						{
+							"key": "dob",
+							"value": "2020-11-04",
+							"type": "text"
+						},
+						{
+							"key": "profession",
+							"value": "Employed",
+							"description": "Employed,Student",
+							"type": "text"
+						},
+						{
+							"key": "locality",
+							"value": "indian",
+							"type": "text"
+						},
+						{
+							"key": "number_of_guests",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "First, let’s look at how to test to ensure that ar",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/myprog/participants/public/api/participants/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"myprog",
+						"participants",
+						"public",
+						"api",
+						"participants",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list participants",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/myprog/participants/public/api/participants/list?page=2&par_page=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"myprog",
+						"participants",
+						"public",
+						"api",
+						"participants",
+						"list"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						},
+						{
+							"key": "par_page",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update participant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "arun",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "10",
+							"type": "text"
+						},
+						{
+							"key": "dob",
+							"value": "2020-11-04",
+							"type": "text"
+						},
+						{
+							"key": "profession",
+							"value": "Employed",
+							"type": "text"
+						},
+						{
+							"key": "locality",
+							"value": "indian",
+							"type": "text"
+						},
+						{
+							"key": "number_of_guests",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "First, let’s look at how to test to ensure that ar",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/myprog/participants/public/api/participants/update/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"myprog",
+						"participants",
+						"public",
+						"api",
+						"participants",
+						"update",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
