@@ -15,9 +15,10 @@ use App\Http\Controllers\API\ParticipantController;
 */
 
 //Route::get('index', 'API\ParticipantController@index');
-Route::get('participants/index', 'App\Http\Controllers\API\ParticipantController@index');
-Route::post('participants/add', 'App\Http\Controllers\API\ParticipantController@addParticipant');
 
+Route::post('participants/add', 'App\Http\Controllers\API\ParticipantController@addParticipant');
+Route::get('participants/list', 'App\Http\Controllers\API\ParticipantController@listParticipant');
+Route::post('participants/update/{id}', 'App\Http\Controllers\API\ParticipantController@updateParticipant');
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });

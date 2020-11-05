@@ -14,18 +14,6 @@ class Participant extends JsonResource
      */
     public function toArray($request)
     {
-       // return parent::toArray($request);
-		return [
-            'id' => $this->id,
-            'name' => $this->name,
-            'age' => $this->age,
-			'dob' => $this->dob,
-			'profession' => $this->profession,
-			'locality' => $this->locality,
-			'number_of_guests' =>$this->number_of_guests,
-			'address' => $this->address,
-            //'created_at' => $this->created_at->format('d/m/Y'),
-            //'updated_at' => $this->updated_at->format('d/m/Y'),
-        ];
+        return parent::toArray($request);
     }
 }
