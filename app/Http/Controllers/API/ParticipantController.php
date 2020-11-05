@@ -7,6 +7,7 @@ use App\Http\Controllers\API\BaseController as BaseController;
 use App\Participant;
 use Validator;
 use App\Http\Resources\Participant as ParticipantResource;
+use Illuminate\Validation\Rule;
 
 class ParticipantController extends BaseController
 {
@@ -37,11 +38,17 @@ class ParticipantController extends BaseController
             'name' => 'required',
             'age' => 'required|numeric',
 			'dob' => 'required|date|before:tomorrow',
-			'profession' => 'required',
+			'profession' => [
+				'required',
+				Rule::in(['Employed', 'Student']),
+			],
 			'locality'=>'required',
 			'number_of_guests' => 'required|numeric|min:0|max:2',
 			'address' => 'required|max:50',
-        ]);
+        ],
+		[
+		'profession.in' => 'The selected profession is invalid.Please select Employed OR Student',
+		]);
 		
 		if($validator->fails()){
             return $this->sendError('Validation Error.', $validator->errors());       
@@ -65,11 +72,17 @@ class ParticipantController extends BaseController
             'name' => 'required',
             'age' => 'required|numeric',
 			'dob' => 'required|date|before:tomorrow',
-			'profession' => 'required',
+			'profession' => [
+				'required',
+				Rule::in(['Employed', 'Student']),
+			],
 			'locality'=>'required',
 			'number_of_guests' => 'required|numeric|min:0|max:2',
 			'address' => 'required|max:50',
-        ]);
+        ],
+		[
+		'profession.in' => 'The selected profession is invalid.Please select Employed OR Student',
+		]);
 		
 		if($validator->fails()){
             return $this->sendError('Validation Error.', $validator->errors());       
